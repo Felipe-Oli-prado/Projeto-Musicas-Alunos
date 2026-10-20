@@ -1,0 +1,253 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root { --accent: #ffc94d; }
+
+body {
+  background: #1a1d1c;
+  color: #fff;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+/* ---------- Sticker ---------- */
+.sticker-area {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.sticker {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,.6));
+  transition: transform .6s ease;
+  cursor: pointer;
+}
+.sticker:hover { transform: rotate(360deg) scale(1.08); }
+
+/* ---------- Caixa principal ---------- */
+.site {
+  width: 100%;
+  max-width: 1000px;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+  border-bottom: 2px solid #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.brand { letter-spacing: .5px; }
+.subtitle { font-size: 12px; text-align: right; }
+
+.content {
+  padding: 28px 28px 24px;
+  background: radial-gradient(ellipse at top, #3a3a3a 0%, #111 55%, #000 100%);
+}
+
+/* ---------- Abas ---------- */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.tab {
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 4px 8px;
+  transition: color .2s, transform .2s;
+}
+.tab:hover { transform: translateY(-1px); text-decoration: underline; }
+.tab.active { color: #777; pointer-events: none; text-decoration: none; }
+
+/* ---------- Hero do perfil ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-left: 4px solid var(--accent);
+  background: rgba(255,255,255,.04);
+}
+.avatar {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  font-weight: 800;
+  color: #000;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.12);
+}
+.hero-info { flex: 1; min-width: 0; }
+.hero-kicker { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa; font-weight: 700; }
+.hero-name { font-size: 24px; margin: 2px 0 4px; }
+.hero-estilo { font-size: 13px; color: #ddd; margin-bottom: 10px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+.hero-stats { display: flex; gap: 22px; text-align: center; }
+.stat strong { display: block; font-size: 22px; color: var(--accent); }
+.stat span { font-size: 11px; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
+
+.section-title { text-align: center; font-size: 16px; margin-bottom: 22px; }
+
+/* ---------- Músicas ---------- */
+.songs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.song {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4px 20px 8px;
+  border-left: 1px solid rgba(255,255,255,.5);
+  transition: background .2s, transform .2s;
+}
+.song:first-child { border-left: none; }
+.song:hover { background: rgba(255,255,255,.05); transform: translateY(-3px); }
+
+.song-number { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #888; }
+
+.cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 190px;
+  align-self: center;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.6);
+  position: relative;
+  overflow: hidden;
+}
+/* disco decorativo no placeholder da capa */
+.cover.placeholder::after {
+  content: "♪";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 64px;
+  color: rgba(255,255,255,.55);
+}
+
+.song-names { display: flex; flex-direction: column; gap: 5px; }
+.song-title  { font-weight: 800; font-size: 18px; }
+.song-artist { font-weight: 700; font-size: 14px; border-top: 1px solid currentColor; padding-top: 5px; }
+
+.song-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.song-tags .tag { font-size: 10px; padding: 2px 8px; }
+
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 12px; }
+.meta dt { color: #999; font-weight: 700; }
+.meta dd { color: #eee; }
+
+.song-desc { font-size: 12.5px; font-weight: 700; line-height: 1.45; }
+
+.opiniao {
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.4;
+  color: #ddd;
+  padding-left: 10px;
+  border-left: 2px solid currentColor;
+}
+.opiniao b { font-style: normal; display: block; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #999; margin-bottom: 2px; }
+
+.listen {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #1db954;
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .2s, filter .2s;
+}
+.listen:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+/* ---------- Navegação entre perfis ---------- */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  font-size: 13px;
+  font-weight: 700;
+}
+.pager a { color: #fff; text-decoration: none; padding: 6px 10px; border: 1px solid rgba(255,255,255,.35); transition: background .2s; }
+.pager a:hover { background: rgba(255,255,255,.1); }
+
+/* ---------- Animação ---------- */
+.fade-in { animation: fade .45s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Rodapé ---------- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  border-top: 2px solid #fff;
+}
+.repo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 18px;
+  background: #fff;
+  color: #000;
+  border-radius: 2px;
+  transition: transform .2s;
+}
+.repo:hover { transform: translateX(3px); }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 800px) {
+  .songs { grid-template-columns: 1fr; gap: 26px; }
+  .song { border-left: none; border-top: 1px solid rgba(255,255,255,.5); padding: 22px 6px 8px; }
+  .song:first-child { border-top: none; padding-top: 4px; }
+  .hero { flex-direction: column; text-align: center; }
+  .tags { justify-content: center; }
+  .topbar { flex-direction: column; align-items: flex-start; }
+  .subtitle { text-align: left; }
+  .content { padding: 22px 14px; }
+}
