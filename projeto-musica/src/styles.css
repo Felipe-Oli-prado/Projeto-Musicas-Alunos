@@ -2,28 +2,26 @@
 
 :root { --accent: #ffc94d; }
 
+html, body { min-height: 100%; }
+
 body {
-  background: #1a1d1c;
+  background: radial-gradient(ellipse at top, #3a3a3a 0%, #111 55%, #000 100%) fixed, #000;
   color: #fff;
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
 }
 
 /* ---------- Sticker ---------- */
 .sticker-area {
-  height: 120px;
+  height: clamp(72px, 11vh, 100px);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  padding-top: 8px;
 }
 .sticker {
-  width: 100px;
-  height: 100px;
+  width: clamp(56px, 8vh, 76px);
+  height: clamp(56px, 8vh, 76px);
   filter: drop-shadow(0 4px 8px rgba(0,0,0,.6));
   transition: transform .6s ease;
   cursor: pointer;
@@ -33,11 +31,9 @@ body {
 /* ---------- Caixa principal ---------- */
 .site {
   width: 100%;
-  max-width: 1000px;
-  border: 2px solid #fff;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  background: #000;
 }
 
 .topbar {
@@ -45,17 +41,19 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  padding: 6px 10px;
-  border-bottom: 2px solid #fff;
+  padding: 8px clamp(16px, 4vw, 56px);
+  background: rgba(0,0,0,.7);
+  border-bottom: 1px solid rgba(255,255,255,.35);
   font-size: 13px;
   font-weight: 700;
 }
-.brand { letter-spacing: .5px; }
+.brand { letter-spacing: 1px; font-size: 14px; }
 .subtitle { font-size: 12px; text-align: right; }
 
 .content {
-  padding: 28px 28px 24px;
-  background: radial-gradient(ellipse at top, #3a3a3a 0%, #111 55%, #000 100%);
+  flex: 1;
+  width: 100%;
+  padding: 12px clamp(16px, 5vw, 80px) 28px;
 }
 
 /* ---------- Abas ---------- */
@@ -64,12 +62,12 @@ body {
   justify-content: space-around;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 .tab {
   color: #fff;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: none;
   padding: 4px 8px;
   transition: color .2s, transform .2s;
@@ -82,20 +80,20 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 18px 20px;
-  margin-bottom: 28px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
   border: 1px solid rgba(255,255,255,.25);
   border-left: 4px solid var(--accent);
   background: rgba(255,255,255,.04);
 }
 .avatar {
-  width: 76px;
-  height: 76px;
+  width: 60px;
+  height: 60px;
   flex-shrink: 0;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 800;
   color: #000;
   background: var(--accent);
@@ -103,8 +101,8 @@ body {
 }
 .hero-info { flex: 1; min-width: 0; }
 .hero-kicker { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa; font-weight: 700; }
-.hero-name { font-size: 24px; margin: 2px 0 4px; }
-.hero-estilo { font-size: 13px; color: #ddd; margin-bottom: 10px; }
+.hero-name { font-size: 20px; margin: 2px 0 4px; }
+.hero-estilo { font-size: 12.5px; color: #ddd; margin-bottom: 10px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
   font-size: 11px;
@@ -115,10 +113,10 @@ body {
   color: var(--accent);
 }
 .hero-stats { display: flex; gap: 22px; text-align: center; }
-.stat strong { display: block; font-size: 22px; color: var(--accent); }
+.stat strong { display: block; font-size: 20px; color: var(--accent); }
 .stat span { font-size: 11px; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
 
-.section-title { text-align: center; font-size: 16px; margin-bottom: 22px; }
+.section-title { text-align: center; font-size: 15px; margin-bottom: 16px; }
 
 /* ---------- Músicas ---------- */
 .songs {
@@ -128,8 +126,8 @@ body {
 .song {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 4px 20px 8px;
+  gap: 10px;
+  padding: 4px clamp(16px, 2.5vw, 40px) 8px;
   border-left: 1px solid rgba(255,255,255,.5);
   transition: background .2s, transform .2s;
 }
@@ -141,7 +139,7 @@ body {
 .cover {
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 190px;
+  max-width: 200px;
   align-self: center;
   object-fit: cover;
   border-radius: 4px;
@@ -167,11 +165,11 @@ body {
 .song-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .song-tags .tag { font-size: 10px; padding: 2px 8px; }
 
-.meta { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 12px; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 13px; }
 .meta dt { color: #999; font-weight: 700; }
 .meta dd { color: #eee; }
 
-.song-desc { font-size: 12.5px; font-weight: 700; line-height: 1.45; }
+.song-desc { font-size: 13px; font-weight: 700; line-height: 1.45; }
 
 .opiniao {
   font-size: 12px;
@@ -184,28 +182,65 @@ body {
 .opiniao b { font-style: normal; display: block; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #999; margin-bottom: 2px; }
 
 .listen {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #1db954;
+  color: #1db954;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.listen:hover { background: #1db954; color: #000; }
+
+/* ---------- Player ---------- */
+.play-btn {
   margin-top: auto;
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
+  padding: 10px 20px;
+  border: none;
   border-radius: 999px;
   background: #1db954;
   color: #000;
-  font-size: 12px;
+  font: inherit;
+  font-size: 13px;
   font-weight: 800;
-  text-decoration: none;
+  cursor: pointer;
   transition: transform .2s, filter .2s;
 }
-.listen:hover { transform: scale(1.05); filter: brightness(1.1); }
+.play-btn:hover { transform: scale(1.06); filter: brightness(1.1); }
+.play-btn:focus-visible, .stop-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.player { margin-top: auto; display: flex; flex-direction: column; gap: 8px; }
+.player iframe { border: 0; border-radius: 12px; display: block; }
+.player audio { width: 100%; }
+.stop-btn {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 999px;
+  color: #ddd;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.stop-btn:hover { background: rgba(255,255,255,.1); }
 
 /* ---------- Navegação entre perfis ---------- */
 .pager {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
-  padding-top: 18px;
+  margin-top: 20px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255,255,255,.2);
   font-size: 13px;
   font-weight: 700;
@@ -222,10 +257,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 10px;
-  font-size: 11px;
+  padding: 8px clamp(16px, 4vw, 56px);
+  font-size: 11.5px;
   font-weight: 700;
-  border-top: 2px solid #fff;
+  background: rgba(0,0,0,.55);
+  border-top: 1px solid rgba(255,255,255,.35);
 }
 .repo {
   display: inline-flex;
@@ -246,13 +282,12 @@ body {
   .tags { justify-content: center; }
   .topbar { flex-direction: column; align-items: flex-start; }
   .subtitle { text-align: left; }
-  .content { padding: 22px 14px; }
 }
 
 /* ---------- Wrapper do React (recebe a cor de destaque do perfil) ---------- */
 .app {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }

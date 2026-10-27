@@ -11,7 +11,7 @@ import Footer from "./components/Footer.jsx";
 // Uma página de perfil. O "key" no <main> reinicia a animação ao trocar de perfil.
 function PaginaPerfil({ indice }) {
   const perfil = perfis[indice];
-
+  
   useEffect(() => {
     document.title = `SESISENAI - Perfil ${indice + 1} · ${perfil.nome}`;
     window.scrollTo(0, 0);
@@ -19,7 +19,6 @@ function PaginaPerfil({ indice }) {
 
   return (
     <div className="app" style={{ "--accent": perfil.cor }}>
-      <Sticker />
 
       <div className="site">
         <header className="topbar">
@@ -27,6 +26,7 @@ function PaginaPerfil({ indice }) {
           <span className="subtitle">Estilos de músicas variadas de três alunos</span>
         </header>
 
+      <Sticker />
         <main className="content" key={perfil.id}>
           <Tabs />
           <Hero perfil={perfil} numero={indice + 1} total={perfis.length} />
