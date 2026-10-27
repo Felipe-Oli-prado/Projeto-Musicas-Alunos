@@ -44,11 +44,11 @@ body {
   padding: 8px clamp(16px, 4vw, 56px);
   background: rgba(0,0,0,.7);
   border-bottom: 1px solid rgba(255,255,255,.35);
-  font-size: 13px;
+  font-size: 15.5px;
   font-weight: 700;
 }
-.brand { letter-spacing: 1px; font-size: 14px; }
-.subtitle { font-size: 12px; text-align: right; }
+.brand { letter-spacing: 1px; font-size: 17px; }
+.subtitle { font-size: 14.5px; text-align: right; }
 
 .content {
   flex: 1;
@@ -67,7 +67,7 @@ body {
 .tab {
   color: #fff;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 17px;
   text-decoration: none;
   padding: 4px 8px;
   transition: color .2s, transform .2s;
@@ -93,19 +93,19 @@ body {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 28px;
+  font-size: 33.5px;
   font-weight: 800;
   color: #000;
   background: var(--accent);
   box-shadow: 0 0 0 4px rgba(255,255,255,.12);
 }
 .hero-info { flex: 1; min-width: 0; }
-.hero-kicker { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa; font-weight: 700; }
-.hero-name { font-size: 20px; margin: 2px 0 4px; }
-.hero-estilo { font-size: 12.5px; color: #ddd; margin-bottom: 10px; }
+.hero-kicker { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa; font-weight: 700; }
+.hero-name { font-size: 24px; margin: 2px 0 4px; }
+.hero-estilo { font-size: 15px; color: #ddd; margin-bottom: 10px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   padding: 3px 9px;
   border-radius: 999px;
@@ -113,10 +113,10 @@ body {
   color: var(--accent);
 }
 .hero-stats { display: flex; gap: 22px; text-align: center; }
-.stat strong { display: block; font-size: 20px; color: var(--accent); }
-.stat span { font-size: 11px; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
+.stat strong { display: block; font-size: 24px; color: var(--accent); }
+.stat span { font-size: 13px; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
 
-.section-title { text-align: center; font-size: 15px; margin-bottom: 16px; }
+.section-title { text-align: center; font-size: 18px; margin-bottom: 16px; }
 
 /* ---------- Músicas ---------- */
 .songs {
@@ -134,7 +134,7 @@ body {
 .song:first-child { border-left: none; }
 .song:hover { background: rgba(255,255,255,.05); transform: translateY(-3px); }
 
-.song-number { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #888; }
+.song-number { font-size: 13px; font-weight: 800; letter-spacing: 2px; color: #888; }
 
 .cover {
   width: 100%;
@@ -159,27 +159,27 @@ body {
 }
 
 .song-names { display: flex; flex-direction: column; gap: 5px; }
-.song-title  { font-weight: 800; font-size: 18px; }
-.song-artist { font-weight: 700; font-size: 14px; border-top: 1px solid currentColor; padding-top: 5px; }
+.song-title  { font-weight: 800; font-size: 21.5px; }
+.song-artist { font-weight: 700; font-size: 17px; border-top: 1px solid currentColor; padding-top: 5px; }
 
 .song-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.song-tags .tag { font-size: 10px; padding: 2px 8px; }
+.song-tags .tag { font-size: 12px; padding: 2px 8px; }
 
-.meta { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 13px; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 15.5px; }
 .meta dt { color: #999; font-weight: 700; }
 .meta dd { color: #eee; }
 
-.song-desc { font-size: 13px; font-weight: 700; line-height: 1.45; }
+.song-desc { font-size: 15.5px; font-weight: 700; line-height: 1.45; }
 
 .opiniao {
-  font-size: 12px;
+  font-size: 14.5px;
   font-style: italic;
   line-height: 1.4;
   color: #ddd;
   padding-left: 10px;
   border-left: 2px solid currentColor;
 }
-.opiniao b { font-style: normal; display: block; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #999; margin-bottom: 2px; }
+.opiniao b { font-style: normal; display: block; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #999; margin-bottom: 2px; }
 
 .listen {
   align-self: flex-start;
@@ -190,7 +190,7 @@ body {
   border-radius: 999px;
   border: 1px solid #1db954;
   color: #1db954;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   text-decoration: none;
   transition: background .2s, color .2s;
@@ -210,7 +210,7 @@ body {
   background: #1db954;
   color: #000;
   font: inherit;
-  font-size: 13px;
+  font-size: 15.5px;
   font-weight: 800;
   cursor: pointer;
   transition: transform .2s, filter .2s;
@@ -228,7 +228,7 @@ body {
   border-radius: 999px;
   color: #ddd;
   font: inherit;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   padding: 4px 12px;
   cursor: pointer;
@@ -242,7 +242,7 @@ body {
   margin-top: 20px;
   padding-top: 14px;
   border-top: 1px solid rgba(255,255,255,.2);
-  font-size: 13px;
+  font-size: 15.5px;
   font-weight: 700;
 }
 .pager a { color: #fff; text-decoration: none; padding: 6px 10px; border: 1px solid rgba(255,255,255,.35); transition: background .2s; }
@@ -258,7 +258,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 8px clamp(16px, 4vw, 56px);
-  font-size: 11.5px;
+  font-size: 14px;
   font-weight: 700;
   background: rgba(0,0,0,.55);
   border-top: 1px solid rgba(255,255,255,.35);
