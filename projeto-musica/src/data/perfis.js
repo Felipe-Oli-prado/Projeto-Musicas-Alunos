@@ -43,7 +43,7 @@ export const perfis = [
         titulo: "Helena", artista: "My Chemical Romance",
         album: "The Black Parade", ano: 2006, gravadora: "Roswell / Capitol Records",
         generos: ["Rock alternativo"],
-        cor: "#b8c7ff", corArtista: "#c9a7ff", corDesc: "#c9a7ff", capaCor: "#3a5f9a",
+        cor: "#7e1919ff", corArtista: "#ffffffff", corDesc: "#ffffffff", capaCor: "#ff0000ff",
         capa: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrDJx5ZEjNWSHT8g4EvoN-zt-PZOEf6tb6Vx7li57-w&s=10", link: spotify("Helena My Chemical Romance"),
         desc: "The Black Parade é o terceiro álbum de estúdio da banda americana de rock alternativo My Chemical Romance, lançado em 20 de outubro de 2006 pelas gravadoras Roswell e Capitol Records.",
         opiniao: "",
