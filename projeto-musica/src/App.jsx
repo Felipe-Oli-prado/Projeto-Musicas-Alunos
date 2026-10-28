@@ -6,7 +6,7 @@ import Tabs from "./components/Tabs.jsx";
 import Hero from "./components/Hero.jsx";
 import SongCard from "./components/SongCard.jsx";
 import Pager from "./components/Pager.jsx";
-import Footer frogm "./components/Footer.jsx";
+import Footer from "./components/Footer.jsx";
 
 // Uma página de perfil. O "key" no <main> reinicia a animação ao trocar de perfil.
 function PaginaPerfil({ indice }) {
